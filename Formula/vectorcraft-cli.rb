@@ -23,10 +23,11 @@ class VectorcraftCli < Formula
     # directory, so the payload sits directly in the buildpath.
     bin.install "vectorcraft-cli"
     doc.install "README.md"
-    # License compliance: ship every text the asset carries (the set varies
-    # slightly between apps — NOTICE and a licenses/ dir are optional).
-    (doc/"licenses").install "LICENSE-MIT", "LICENSE-APACHE"
-    (doc/"licenses").install "NOTICE" if File.exist?("NOTICE")
+    # License compliance: ship every license text the asset carries (the exact
+    # set varies slightly between apps; NOTICE and a licenses/ dir are optional).
+    ["LICENSE-MIT", "LICENSE-APACHE", "NOTICE"].each do |license_file|
+      (doc/"licenses").install license_file if File.exist?(license_file)
+    end
     (doc/"licenses/fonts").install Dir["OFL-*.txt"]
     (doc/"licenses/fonts").install Dir["licenses/*"] if Dir.exist?("licenses")
   end
