@@ -1,0 +1,48 @@
+name: Update formulas
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily, 06:00 UTC
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "apps.json"
+      - "script/**"
+      - "Formula/**"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Constitution §4: PRs must not drift from generator output.
+      - name: Drift check (pull_request)
+        if: github.event_name == 'pull_request'
+        run: python3 script/update.py --check
+
+      # Constitution §7: scheduled/manual runs may push only mechanical
+      # regeneration output.
+      - name: Regenerate (schedule / dispatch)
+        if: github.event_name != 'pull_request'
+        run: python3 script/update.py
+
+      - name: Commit regenerated formulas
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "No formula changes upstream."
+          else
+            git add Formula
+            git commit -m "ci: regenerate formulas from upstream releases"
+            git push
+          fi

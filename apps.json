@@ -1,0 +1,34 @@
+{
+  "github_org": "storytold",
+  "asset_pattern": "{app}-cli-{version}-macos-universal.zip",
+  "apps": [
+    "figcraft",
+    "deckcraft",
+    "photocraft",
+    "pdfcraft",
+    "filmcraft",
+    "vectorcraft",
+    "lightcraft",
+    "designcraft",
+    "effectcraft",
+    "gridcraft",
+    "cadcraft",
+    "soundcraft",
+    "wordcraft"
+  ],
+  "descriptions": {
+    "figcraft": "CLI for FigCraft, the open-source interface design and prototyping app",
+    "deckcraft": "CLI for DeckCraft, the open-source presentation and slideshow app",
+    "photocraft": "CLI for PhotoCraft, the open-source photo editor",
+    "pdfcraft": "CLI for PdfCraft, the open-source PDF reader and editor",
+    "filmcraft": "CLI for FilmCraft, the open-source nonlinear video editor",
+    "vectorcraft": "CLI for VectorCraft, the open-source vector art tool",
+    "lightcraft": "CLI for LightCraft, the open-source non-destructive photo editor",
+    "designcraft": "CLI for DesignCraft, the open-source page and layout design app",
+    "effectcraft": "CLI for EffectCraft, the open-source motion graphics and compositing app",
+    "gridcraft": "CLI for GridCraft, the open-source spreadsheet app",
+    "cadcraft": "CLI for CadCraft, the open-source CAD and drafting app",
+    "soundcraft": "CLI for SoundCraft, the open-source audio workstation",
+    "wordcraft": "CLI for WordCraft, the open-source word processor"
+  }
+}
