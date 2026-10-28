@@ -53,6 +53,43 @@ Verify: `figcraft-cli --version` prints `figcraft-cli 0.11.2`, matching the upst
 - A scheduled GitHub Action regenerates formulas daily (`workflow_dispatch`
   also available); PRs are checked for drift from generator output.
 
+## Licensing
+
+- This tap's own content (formula generator, CI workflow, generated formula
+  files) is dual-licensed **MIT OR Apache-2.0, at your option** — see
+  [`LICENSE-MIT`](LICENSE-MIT) and [`LICENSE-APACHE`](LICENSE-APACHE), mirroring
+  the licensing of the apps it packages.
+- The CLI binaries installed by these formulas are not covered by this
+  repository's license; they keep their own upstream terms (MIT or Apache-2.0,
+  plus SIL OFL 1.1 for embedded fonts), and every license text is redistributed
+  into `doc/licenses`. See [`NOTICE.md`](NOTICE.md).
+
+## A note to the ArtCraft Team
+
+> **Hi ArtCraft maintainers!** This tap is an unofficial, community-maintained
+> effort to make your CLIs one-command installable on macOS:
+>
+> ```sh
+> brew install 01Joseph-Hwang10/artcraft/deckcraft-cli
+> ```
+>
+> Every formula is **generated** directly from your official GitHub releases
+> (version, URL, and checksum all come from your own release assets), so it
+> stays in lockstep with what you publish — no forks, no patches, no mirrors.
+>
+> **If you're interested, I'd be happy to transfer ownership of this repository
+> to the ArtCraft project** (e.g. as `storytold/homebrew-artcraft`), so it can
+> become an official upstream tap — see Homebrew's
+> [upstream taps](https://docs.brew.sh/How-to-Create-and-Maintain-a-Tap#upstream-taps)
+> doc for why that's the recommended arrangement. A GitHub repository transfer
+> preserves the history, stars, and existing installs, and old tap URLs keep
+> redirecting automatically. Alternatively, I'm glad to keep maintaining it
+> independently — whichever serves your users better.
+>
+> To get in touch: [@01Joseph-Hwang10](https://github.com/01Joseph-Hwang10) —
+> open an issue here, ping me on GitHub, or just say the word and I'll transfer
+> the repository to the org of your choice.
+
 ## Local development
 
 ```sh
