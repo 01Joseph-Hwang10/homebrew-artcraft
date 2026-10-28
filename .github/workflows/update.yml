@@ -23,15 +23,18 @@ jobs:
         with:
           python-version: "3.12"
 
-      # Constitution §4: PRs must not drift from generator output.
       - name: Drift check (pull_request)
         if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: python3 script/update.py --check
 
       # Constitution §7: scheduled/manual runs may push only mechanical
       # regeneration output.
       - name: Regenerate (schedule / dispatch)
         if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: python3 script/update.py
 
       - name: Commit regenerated formulas
