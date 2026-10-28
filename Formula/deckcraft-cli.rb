@@ -23,9 +23,10 @@ class DeckcraftCli < Formula
     # directory, so the payload sits directly in the buildpath.
     bin.install "deckcraft-cli"
     doc.install "README.md"
-    # License compliance: ship every text the NOTICE requires
-    # (dual license + embedded SIL OFL 1.1 font licenses).
-    (doc/"licenses").install "LICENSE-MIT", "LICENSE-APACHE", "NOTICE"
+    # License compliance: ship every text the asset carries (the set varies
+    # slightly between apps — NOTICE and a licenses/ dir are optional).
+    (doc/"licenses").install "LICENSE-MIT", "LICENSE-APACHE"
+    (doc/"licenses").install "NOTICE" if File.exist?("NOTICE")
     (doc/"licenses/fonts").install Dir["OFL-*.txt"]
     (doc/"licenses/fonts").install Dir["licenses/*"] if Dir.exist?("licenses")
   end
