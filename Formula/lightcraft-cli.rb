@@ -9,8 +9,8 @@ class LightcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/lightcraft/releases/download/v0.16.0/lightcraft-cli-0.16.0-macos-universal.zip"
-  sha256 "64f127f132a1a59074d3d4746cfbd265ed4ad30abc6fa74f15fa3591cce5dc3e"
+  url "https://github.com/storytold/lightcraft/releases/download/v0.17.0/lightcraft-cli-0.17.0-macos-universal.zip"
+  sha256 "79e111ca32152b869a285bfe3c05548a97132f8c5e1f711f41e0083200a96590"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."
