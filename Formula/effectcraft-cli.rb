@@ -9,8 +9,8 @@ class EffectcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/effectcraft/releases/download/v0.20.0/effectcraft-cli-0.20.0-macos-universal.zip"
-  sha256 "adc713ed5049983bec00c651f307e122074ac542ca48e6a43011dfbfb0f10e16"
+  url "https://github.com/storytold/effectcraft/releases/download/v0.21.0/effectcraft-cli-0.21.0-macos-universal.zip"
+  sha256 "bb778f9db8b76e7e8c11acf4a35650a78022899542e934e11ad588e9946a6942"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."

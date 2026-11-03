@@ -9,8 +9,8 @@ class VectorcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/vectorcraft/releases/download/v0.20.0/vectorcraft-cli-0.20.0-macos-universal.zip"
-  sha256 "c840d5b6b278b50f938bfced99e121aaa76e2065c84fdb377182126e5df3f33f"
+  url "https://github.com/storytold/vectorcraft/releases/download/v0.21.0/vectorcraft-cli-0.21.0-macos-universal.zip"
+  sha256 "1c645c749759654223136f9a4c0c6ea73867e79a3969b17844e3cdabaec07429"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."

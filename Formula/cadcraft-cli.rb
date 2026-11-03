@@ -9,8 +9,8 @@ class CadcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/cadcraft/releases/download/v0.16.0/cadcraft-cli-0.16.0-macos-universal.zip"
-  sha256 "bcf18369e36eaa409a2d4d67fd30eb889713bc08b9e7a30ba1967c974d1d556d"
+  url "https://github.com/storytold/cadcraft/releases/download/v0.17.0/cadcraft-cli-0.17.0-macos-universal.zip"
+  sha256 "53ee95e7134c9032d79dfcfabc77f8886553514792310947e8b81fead7516584"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."
