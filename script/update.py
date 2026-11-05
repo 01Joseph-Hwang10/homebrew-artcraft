@@ -19,6 +19,8 @@ import re
 import shutil
 import subprocess
 import sys
+import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -28,6 +30,12 @@ FORMULA_DIR = REPO_ROOT / "Formula"
 
 SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$")
 ASSET_RE_TMPL = r"^{app}-cli-(.+)-macos-universal\.zip$"
+
+# Transient upstream failures (e.g. release CDN 504s) are retried instead of
+# failing the whole run; see fetch_with_retries.
+MAX_FETCH_ATTEMPTS = 3
+FETCH_BACKOFF_SECONDS = 2.0
+RETRYABLE_HTTP_STATUSES = {429, 500, 502, 503, 504}
 
 FORMULA_TEMPLATE = """\
 # frozen_string_literal: true
@@ -75,23 +83,57 @@ def fail(msg: str) -> None:
     raise RuntimeError(msg)
 
 
+def fetch_with_retries(fetch, description: str):
+    """Run a network fetch, retrying transient upstream failures with backoff."""
+    for attempt in range(1, MAX_FETCH_ATTEMPTS + 1):
+        try:
+            return fetch()
+        except urllib.error.HTTPError as error:
+            retryable = error.code in RETRYABLE_HTTP_STATUSES
+        except urllib.error.URLError as error:  # timeouts, DNS hiccups, etc.
+            retryable = True
+        except subprocess.CalledProcessError as error:
+            retryable = any(
+                str(status) in (error.stderr or "") for status in RETRYABLE_HTTP_STATUSES
+            )
+        if not retryable or attempt == MAX_FETCH_ATTEMPTS:
+            raise
+        delay = FETCH_BACKOFF_SECONDS * (2 ** (attempt - 1))
+        print(
+            f"{description}: transient error ({error}); retrying in {delay:g}s "
+            f"(attempt {attempt + 1}/{MAX_FETCH_ATTEMPTS})",
+            file=sys.stderr,
+        )
+        time.sleep(delay)
+
+
 def gh_api(path: str) -> dict:
     """GitHub API GET. Prefers authenticated `gh`, falls back to unauthenticated."""
     if shutil.which("gh"):
-        result = subprocess.run(
-            ["gh", "api", path],
-            capture_output=True, text=True, check=True, timeout=60,
-        )
-        return json.loads(result.stdout)
-    request = urllib.request.Request(f"https://api.github.com/{path}")
-    request.add_header("Accept", "application/vnd.github+json")
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return json.loads(response.read().decode())
+        def fetch_via_gh() -> dict:
+            result = subprocess.run(
+                ["gh", "api", path],
+                capture_output=True, text=True, check=True, timeout=60,
+            )
+            return json.loads(result.stdout)
+
+        return fetch_with_retries(fetch_via_gh, f"gh api {path}")
+
+    def fetch_via_urllib() -> dict:
+        request = urllib.request.Request(f"https://api.github.com/{path}")
+        request.add_header("Accept", "application/vnd.github+json")
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return json.loads(response.read().decode())
+
+    return fetch_with_retries(fetch_via_urllib, f"GitHub API {path}")
 
 
 def download_text(url: str) -> str:
-    with urllib.request.urlopen(url, timeout=60) as response:
-        return response.read().decode()
+    def fetch() -> str:
+        with urllib.request.urlopen(url, timeout=60) as response:
+            return response.read().decode()
+
+    return fetch_with_retries(fetch, f"download {url}")
 
 
 def class_name_for(app: str) -> str:
