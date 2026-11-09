@@ -9,8 +9,8 @@ class DeckcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/deckcraft/releases/download/v0.16.0/deckcraft-cli-0.16.0-macos-universal.zip"
-  sha256 "b9103783105ee3f11baa23d30be4cf0caf2bdce3f4b2bc0a142c12dc22cf08e8"
+  url "https://github.com/storytold/deckcraft/releases/download/v0.17.0/deckcraft-cli-0.17.0-macos-universal.zip"
+  sha256 "9ab99fbcfcf8365546f9808a34279bbdf7a7edee024222bda238e307e4081bbc"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."

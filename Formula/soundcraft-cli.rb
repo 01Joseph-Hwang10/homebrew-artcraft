@@ -9,8 +9,8 @@ class SoundcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/soundcraft/releases/download/v0.18.0/soundcraft-cli-0.18.0-macos-universal.zip"
-  sha256 "e511ff45a5b5b755b7ef8b54e5edf8d5fffdc3e8a1a545972f2bcab18c11efdc"
+  url "https://github.com/storytold/soundcraft/releases/download/v0.19.0/soundcraft-cli-0.19.0-macos-universal.zip"
+  sha256 "d0bd08082292f972e3435834df437f5d9c8b8f4913586138509d1e1c0ab7d986"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."

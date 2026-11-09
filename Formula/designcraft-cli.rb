@@ -9,8 +9,8 @@ class DesigncraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/designcraft/releases/download/v0.18.0/designcraft-cli-0.18.0-macos-universal.zip"
-  sha256 "21680591f9c263001f41d86d21d76ddf2e644141e67bd9b5c4f0444187be36e2"
+  url "https://github.com/storytold/designcraft/releases/download/v0.19.0/designcraft-cli-0.19.0-macos-universal.zip"
+  sha256 "30245ba54b026437dc5563a3ad483c1217b7ccbe19871dc7261187311d3b7b74"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."
