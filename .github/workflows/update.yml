@@ -9,6 +9,7 @@ on:
       - "apps.json"
       - "script/**"
       - "Formula/**"
+      - "README.md"
 
 permissions:
   contents: write
@@ -37,15 +38,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: python3 script/update.py
 
-      - name: Commit regenerated formulas
+      - name: Commit regenerated formulas and README table
         if: github.event_name != 'pull_request'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if git diff --quiet; then
-            echo "No formula changes upstream."
+            echo "No formula or README changes upstream."
           else
-            git add Formula
-            git commit -m "ci: regenerate formulas from upstream releases"
+            git add Formula README.md
+            git commit -m "ci: regenerate formulas and README CLI table from upstream releases"
             git push
           fi

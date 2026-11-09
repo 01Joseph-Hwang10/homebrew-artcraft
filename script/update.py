@@ -9,8 +9,9 @@ Constitution (specs/constitution.md):
 - Checksums come only from the release's SHA256SUMS.txt.
 
 Usage:
-  python3 script/update.py           # regenerate formulas
-  python3 script/update.py --check   # CI drift check: exit 1 if any formula would change
+  python3 script/update.py           # regenerate formulas + README CLI table
+  python3 script/update.py --check   # CI drift check: exit 1 if any formula or
+                                     # the README table would change; writes nothing
 """
 
 import argparse
@@ -27,6 +28,12 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 APPS_JSON = REPO_ROOT / "apps.json"
 FORMULA_DIR = REPO_ROOT / "Formula"
+README_PATH = REPO_ROOT / "README.md"
+
+README_SECTION_RE = re.compile(
+    r"<!-- generated:available-clis:start -->\n(?P<table>.*?)\n<!-- generated:available-clis:end -->",
+    re.DOTALL,
+)
 
 SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$")
 ASSET_RE_TMPL = r"^{app}-cli-(.+)-macos-universal\.zip$"
@@ -195,6 +202,57 @@ def render_formula(info: dict, desc: str) -> str:
     )
 
 
+def validate_readme_meta(app: str, meta) -> dict:
+    """Validate one app's apps.json `readme` entry, fail-closed."""
+    if not isinstance(meta, dict):
+        fail(f"{app}: apps.json 'readme' entry is missing or not an object")
+    for field in ("display_name", "tagline"):
+        value = meta.get(field)
+        if not isinstance(value, str) or not value.strip():
+            fail(f"{app}: apps.json 'readme.{field}' is missing or empty")
+        if "|" in value or "\n" in value:
+            fail(f"{app}: apps.json 'readme.{field}' must not contain '|' or newlines")
+    return meta
+
+
+def render_readme_table(infos: list, readme_meta: dict) -> str:
+    """Render the generated `## Available CLIs` table (deterministic output)."""
+    lines = ["| Formula | App | Latest |", "|---|---|---|"]
+    for info in infos:
+        app = info["app"]
+        meta = validate_readme_meta(app, readme_meta.get(app))
+        lines.append(
+            f"| `{app}-cli` | [{meta['display_name']}]"
+            f"(https://github.com/{info['org']}/{app}) — {meta['tagline']}"
+            f" | {info['version']} |"
+        )
+    return "\n".join(lines)
+
+
+def update_readme(infos: list, readme_meta: dict, check: bool) -> bool:
+    """Rewrite (or, in check mode, diff-verify) the README generated section.
+
+    Fail-closed per constitution §2: missing or duplicated markers abort with
+    no write. Returns True if the committed section drifts from generator
+    output (only meaningful in check mode).
+    """
+    text = README_PATH.read_text()
+    matches = list(README_SECTION_RE.finditer(text))
+    if not matches:
+        fail("README.md: no 'generated:available-clis' start/end markers found")
+    if len(matches) > 1:
+        fail(f"README.md: found {len(matches)} 'generated:available-clis' marker pairs; expected exactly 1")
+
+    match = matches[0]
+    table = render_readme_table(infos, readme_meta)
+    new_text = text[: match.start("table")] + table + text[match.end("table") :]
+
+    drift = new_text != text
+    if not check and drift:
+        README_PATH.write_text(new_text)
+    return drift
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true",
@@ -204,13 +262,16 @@ def main() -> int:
     config = json.loads(APPS_JSON.read_text())
     org = config["github_org"]
     descriptions = config.get("descriptions", {})
+    readme_meta = config.get("readme", {})
 
     FORMULA_DIR.mkdir(exist_ok=True)
 
     statuses, errors = [], []
+    successful = []  # release infos for apps that fetched cleanly, in apps.json order
     for app in config["apps"]:
         try:
             info = fetch_release(app, org)
+            successful.append(info)
             desc = descriptions.get(app)
             if not desc:
                 fail(f"{app}: no description in apps.json")
@@ -237,6 +298,26 @@ def main() -> int:
             statuses.append(f"FAILED {app}: {error}")
 
     print("\n".join(statuses))
+
+    # README's generated region is rewritten only when every app succeeded, so
+    # the table can never advertise a version without a matching formula
+    # (constitution §2/§7 fail-closed rule).
+    if not errors:
+        try:
+            drift = update_readme(successful, readme_meta, args.check)
+            if args.check:
+                statuses.append("OK     README.md (available CLIs table)" if not drift
+                                else "DRIFT  README.md (available CLIs table)")
+                if drift:
+                    errors.append("README.md generated section drifts from generator output")
+            elif drift:
+                statuses.append("WROTE  README.md (available CLIs table)")
+            else:
+                statuses.append("OK     README.md (available CLIs table) (unchanged)")
+        except Exception as error:  # noqa: BLE001 — fail closed, no partial write
+            errors.append(str(error))
+            statuses.append(f"FAILED README.md: {error}")
+
     if errors:
         print(f"\n{len(errors)} app(s) failed:", file=sys.stderr)
         for error in errors:

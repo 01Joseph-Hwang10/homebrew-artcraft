@@ -30,5 +30,20 @@
     "cadcraft": "CLI for CadCraft, the open-source CAD and drafting app",
     "soundcraft": "CLI for SoundCraft, the open-source audio workstation",
     "wordcraft": "CLI for WordCraft, the open-source word processor"
+  },
+  "readme": {
+    "figcraft":   { "display_name": "FigCraft",   "tagline": "interface design & prototyping" },
+    "deckcraft":  { "display_name": "DeckCraft",  "tagline": "presentations & slideshows" },
+    "photocraft": { "display_name": "PhotoCraft", "tagline": "photo editor" },
+    "pdfcraft":   { "display_name": "PdfCraft",   "tagline": "PDF reader & editor" },
+    "filmcraft":  { "display_name": "FilmCraft",  "tagline": "nonlinear video editor" },
+    "vectorcraft": { "display_name": "VectorCraft", "tagline": "vector art tool" },
+    "lightcraft": { "display_name": "LightCraft", "tagline": "non-destructive photo editor" },
+    "designcraft": { "display_name": "DesignCraft", "tagline": "page & layout design" },
+    "effectcraft": { "display_name": "EffectCraft", "tagline": "motion graphics & compositing" },
+    "gridcraft":  { "display_name": "GridCraft",  "tagline": "spreadsheet" },
+    "cadcraft":   { "display_name": "CadCraft",   "tagline": "CAD & drafting" },
+    "soundcraft": { "display_name": "SoundCraft", "tagline": "audio workstation" },
+    "wordcraft":  { "display_name": "WordCraft",  "tagline": "word processor" }
   }
 }

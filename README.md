@@ -19,25 +19,46 @@ Or install directly (tap is added automatically):
 brew install 01Joseph-Hwang10/artcraft/figcraft-cli
 ```
 
+## Upgrade
+
+```sh
+brew update
+brew upgrade
+```
+
+Or upgrade a single CLI:
+
+```sh
+brew upgrade 01Joseph-Hwang10/artcraft/deckcraft-cli
+```
+
+Because every formula is generated in lockstep with the upstream release (the
+version comes from the release asset filename), `brew upgrade` always lands the
+CLI on the exact version of the latest app release — never a stale or
+mismatched build.
+
 ## Available CLIs
 
+<!-- generated:available-clis:start -->
 | Formula | App | Latest |
 |---|---|---|
-| `figcraft-cli` | [FigCraft](https://github.com/storytold/figcraft) — interface design & prototyping | 0.11.2 |
-| `deckcraft-cli` | [DeckCraft](https://github.com/storytold/deckcraft) — presentations & slideshows | 0.11.1 |
-| `photocraft-cli` | [PhotoCraft](https://github.com/storytold/photocraft) — photo editor | 0.16.0 |
-| `pdfcraft-cli` | [PdfCraft](https://github.com/storytold/pdfcraft) — PDF reader & editor | 0.14.0 |
-| `filmcraft-cli` | [FilmCraft](https://github.com/storytold/filmcraft) — nonlinear video editor | 0.13.0 |
-| `vectorcraft-cli` | [VectorCraft](https://github.com/storytold/vectorcraft) — vector art tool | 0.17.0 |
-| `lightcraft-cli` | [LightCraft](https://github.com/storytold/lightcraft) — non-destructive photo editor | 0.14.0 |
-| `designcraft-cli` | [DesignCraft](https://github.com/storytold/designcraft) — page & layout design | 0.13.0 |
-| `effectcraft-cli` | [EffectCraft](https://github.com/storytold/effectcraft) — motion graphics & compositing | 0.17.0 |
-| `gridcraft-cli` | [GridCraft](https://github.com/storytold/gridcraft) — spreadsheet | 0.12.1 |
-| `cadcraft-cli` | [CadCraft](https://github.com/storytold/cadcraft) — CAD & drafting | 0.13.0 |
-| `soundcraft-cli` | [SoundCraft](https://github.com/storytold/soundcraft) — audio workstation | 0.13.1 |
-| `wordcraft-cli` | [WordCraft](https://github.com/storytold/wordcraft) — word processor | 0.11.0 |
+| `figcraft-cli` | [FigCraft](https://github.com/storytold/figcraft) — interface design & prototyping | 0.17.0 |
+| `deckcraft-cli` | [DeckCraft](https://github.com/storytold/deckcraft) — presentations & slideshows | 0.17.0 |
+| `photocraft-cli` | [PhotoCraft](https://github.com/storytold/photocraft) — photo editor | 0.22.0 |
+| `pdfcraft-cli` | [PdfCraft](https://github.com/storytold/pdfcraft) — PDF reader & editor | 0.20.0 |
+| `filmcraft-cli` | [FilmCraft](https://github.com/storytold/filmcraft) — nonlinear video editor | 0.19.0 |
+| `vectorcraft-cli` | [VectorCraft](https://github.com/storytold/vectorcraft) — vector art tool | 0.23.0 |
+| `lightcraft-cli` | [LightCraft](https://github.com/storytold/lightcraft) — non-destructive photo editor | 0.20.0 |
+| `designcraft-cli` | [DesignCraft](https://github.com/storytold/designcraft) — page & layout design | 0.19.0 |
+| `effectcraft-cli` | [EffectCraft](https://github.com/storytold/effectcraft) — motion graphics & compositing | 0.23.0 |
+| `gridcraft-cli` | [GridCraft](https://github.com/storytold/gridcraft) — spreadsheet | 0.18.0 |
+| `cadcraft-cli` | [CadCraft](https://github.com/storytold/cadcraft) — CAD & drafting | 0.19.0 |
+| `soundcraft-cli` | [SoundCraft](https://github.com/storytold/soundcraft) — audio workstation | 0.19.0 |
+| `wordcraft-cli` | [WordCraft](https://github.com/storytold/wordcraft) — word processor | 0.17.0 |
+<!-- generated:available-clis:end -->
 
-Verify: `figcraft-cli --version` prints `figcraft-cli 0.11.2`, matching the upstream release.
+Verify: `figcraft-cli --version` prints the installed version, matching the
+latest upstream release.
 
 ## How it works
 

@@ -15,6 +15,11 @@ new entry in `specs/changes/`.
 - `Formula/*.rb` files are build artifacts produced by `script/update.py` from
   `apps.json` + a template. Never edit a formula by hand; fix the generator,
   then regenerate.
+- The `## Available CLIs` table in `README.md`, between the
+  `generated:available-clis:start` / `:end` markers, is likewise a generated
+  artifact of `script/update.py`. Never hand-edit inside the markers; fix the
+  generator (or `apps.json` `readme` metadata), then regenerate. Prose outside
+  the markers stays hand-edited.
 - The update script must be idempotent: re-running it on unchanged upstream
   releases produces zero diffs.
 
@@ -35,8 +40,8 @@ new entry in `specs/changes/`.
 - A change is done only when `brew audit --strict --formula Formula/<changed>.rb`
   passes and an install smoke test (`brew install ./Formula/<changed>.rb` +
   `<bin> --version`) succeeds.
-- CI must reproduce the generation step and fail if committed formulas drift
-  from what the generator would produce.
+- CI must reproduce the generation step and fail if committed formulas — or the
+  README's generated region — drift from what the generator would produce.
 
 ## 5. Upstream respect
 
@@ -60,6 +65,10 @@ new entry in `specs/changes/`.
 
 ## 7. Automation safety
 
-- CI automation may commit and push only mechanical generator output
-  (formula regeneration). Any behavioral change to the generator, template,
-  or `apps.json` requires a reviewed pull request.
+- CI automation may commit and push only mechanical generator output (formula
+  regeneration and the regenerated README `## Available CLIs` table). Any
+  behavioral change to the generator, template, `apps.json` (including its
+  `readme` metadata), or the markers/row shape requires a reviewed pull request.
+- The README generation must fail closed: markers missing or malformed → no
+  write; any app failing → no README rewrite, so the table can never advertise
+  a version without a matching formula.
