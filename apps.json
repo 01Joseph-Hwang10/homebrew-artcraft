@@ -14,7 +14,11 @@
     "gridcraft",
     "cadcraft",
     "soundcraft",
-    "wordcraft"
+    "wordcraft",
+    "anicraft",
+    "texturecraft",
+    "materialcraft",
+    "craft-anything"
   ],
   "descriptions": {
     "figcraft": "CLI for FigCraft, the open-source interface design and prototyping app",
@@ -29,7 +33,11 @@
     "gridcraft": "CLI for GridCraft, the open-source spreadsheet app",
     "cadcraft": "CLI for CadCraft, the open-source CAD and drafting app",
     "soundcraft": "CLI for SoundCraft, the open-source audio workstation",
-    "wordcraft": "CLI for WordCraft, the open-source word processor"
+    "wordcraft": "CLI for WordCraft, the open-source word processor",
+    "anicraft": "CLI for AniCraft, the open-source 2D vector animation app",
+    "texturecraft": "CLI for TextureCraft, the open-source PBR texture painting app",
+    "materialcraft": "CLI for MaterialCraft, the open-source PBR material design app",
+    "craft-anything": "CLI for Craft Anything, the open-source software analysis and rebuilding toolkit"
   },
   "readme": {
     "figcraft":   { "display_name": "FigCraft",   "tagline": "interface design & prototyping" },
@@ -44,6 +52,10 @@
     "gridcraft":  { "display_name": "GridCraft",  "tagline": "spreadsheet" },
     "cadcraft":   { "display_name": "CadCraft",   "tagline": "CAD & drafting" },
     "soundcraft": { "display_name": "SoundCraft", "tagline": "audio workstation" },
-    "wordcraft":  { "display_name": "WordCraft",  "tagline": "word processor" }
+    "wordcraft":  { "display_name": "WordCraft",  "tagline": "word processor" },
+    "anicraft":    { "display_name": "AniCraft",    "tagline": "2D vector animation" },
+    "texturecraft": { "display_name": "TextureCraft", "tagline": "PBR texture painting" },
+    "materialcraft": { "display_name": "MaterialCraft", "tagline": "PBR material design" },
+    "craft-anything": { "display_name": "Craft Anything", "tagline": "understand & rebuild software" }
   }
 }

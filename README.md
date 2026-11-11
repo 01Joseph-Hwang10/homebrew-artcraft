@@ -55,6 +55,10 @@ mismatched build.
 | `cadcraft-cli` | [CadCraft](https://github.com/storytold/cadcraft) — CAD & drafting | 0.19.0 |
 | `soundcraft-cli` | [SoundCraft](https://github.com/storytold/soundcraft) — audio workstation | 0.19.0 |
 | `wordcraft-cli` | [WordCraft](https://github.com/storytold/wordcraft) — word processor | 0.17.0 |
+| `anicraft-cli` | [AniCraft](https://github.com/storytold/anicraft) — 2D vector animation | 0.1.0 |
+| `texturecraft-cli` | [TextureCraft](https://github.com/storytold/texturecraft) — PBR texture painting | 0.5.0 |
+| `materialcraft-cli` | [MaterialCraft](https://github.com/storytold/materialcraft) — PBR material design | 0.3.0 |
+| `craft-anything-cli` | [Craft Anything](https://github.com/storytold/craft-anything) — understand & rebuild software | 0.6.0 |
 <!-- generated:available-clis:end -->
 
 Verify: `figcraft-cli --version` prints the installed version, matching the
