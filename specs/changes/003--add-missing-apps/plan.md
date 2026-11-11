@@ -5,8 +5,9 @@ Depends on: 001--initial-implementation (complete), 002--readme-table-automation
 
 ## Goal
 
-Sync the tap with `https://getartcraft.com/apps`: the page now lists 16
-CLI-shipping apps while the tap tracked 13. Add the four missing apps:
+Sync the tap with `https://getartcraft.com/apps`: the page now lists 17
+CLI-shipping apps (the site's own meta says "seventeen native Crafting Apps";
+the tap tracked 13 of them). Add the four missing apps:
 
 - **AniCraft** — 2D vector animation studio
 - **TextureCraft** — PBR texture painting
