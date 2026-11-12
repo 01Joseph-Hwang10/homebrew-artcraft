@@ -9,8 +9,8 @@ class FigcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/figcraft/releases/download/v0.17.0/figcraft-cli-0.17.0-macos-universal.zip"
-  sha256 "42ca7e870c7e9c2dd574de176f1e0640e016123f83d3244b501e60f905f3a50a"
+  url "https://github.com/storytold/figcraft/releases/download/v0.18.1/figcraft-cli-0.18.1-macos-universal.zip"
+  sha256 "87efbca334e0925fce328ede159faef2df781b2a167d573888044127bfd4b0de"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."

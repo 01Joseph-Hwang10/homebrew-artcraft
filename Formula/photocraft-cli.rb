@@ -9,8 +9,8 @@ class PhotocraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/photocraft/releases/download/v0.22.0/photocraft-cli-0.22.0-macos-universal.zip"
-  sha256 "60e5bf1e689e58a800763867fbed193b7297d6366bbece57b6b78abd9ada875b"
+  url "https://github.com/storytold/photocraft/releases/download/v0.23.1/photocraft-cli-0.23.1-macos-universal.zip"
+  sha256 "a6ecdc6d4add02881642bda0a0b191b4974118651f2ec5641dc71b2c3ff4b752"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."

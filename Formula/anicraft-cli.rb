@@ -9,8 +9,8 @@ class AnicraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/anicraft/releases/download/v0.1.0/anicraft-cli-0.1.0-macos-universal.zip"
-  sha256 "c4badaed6eeffb12eb2c498c8c7d32edc62f7abd1de0ebe45d85de2d8c80da8b"
+  url "https://github.com/storytold/anicraft/releases/download/v0.2.1/anicraft-cli-0.2.1-macos-universal.zip"
+  sha256 "3fb12429aa306bdbb01ba1e1c5ddb69fb7c688f07d16c0e148bbe92c4c5ebb06"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."

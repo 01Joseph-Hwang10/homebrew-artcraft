@@ -9,8 +9,8 @@ class FilmcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/filmcraft/releases/download/v0.19.0/filmcraft-cli-0.19.0-macos-universal.zip"
-  sha256 "1461679ccbef12e3f343ef24cce48b1ed473bb6285da8acdb3f8c2368cb7d3cd"
+  url "https://github.com/storytold/filmcraft/releases/download/v0.20.1/filmcraft-cli-0.20.1-macos-universal.zip"
+  sha256 "1651d9defb54f853cbd69016428bb9f72a7bf26d56e4755b8e2a79535fd0ac82"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."

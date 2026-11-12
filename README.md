@@ -42,23 +42,23 @@ mismatched build.
 <!-- generated:available-clis:start -->
 | Formula | App | Latest |
 |---|---|---|
-| `figcraft-cli` | [FigCraft](https://github.com/storytold/figcraft) — interface design & prototyping | 0.17.0 |
-| `deckcraft-cli` | [DeckCraft](https://github.com/storytold/deckcraft) — presentations & slideshows | 0.17.0 |
-| `photocraft-cli` | [PhotoCraft](https://github.com/storytold/photocraft) — photo editor | 0.22.0 |
-| `pdfcraft-cli` | [PdfCraft](https://github.com/storytold/pdfcraft) — PDF reader & editor | 0.20.0 |
-| `filmcraft-cli` | [FilmCraft](https://github.com/storytold/filmcraft) — nonlinear video editor | 0.19.0 |
-| `vectorcraft-cli` | [VectorCraft](https://github.com/storytold/vectorcraft) — vector art tool | 0.23.0 |
-| `lightcraft-cli` | [LightCraft](https://github.com/storytold/lightcraft) — non-destructive photo editor | 0.20.0 |
-| `designcraft-cli` | [DesignCraft](https://github.com/storytold/designcraft) — page & layout design | 0.19.0 |
-| `effectcraft-cli` | [EffectCraft](https://github.com/storytold/effectcraft) — motion graphics & compositing | 0.23.1 |
-| `gridcraft-cli` | [GridCraft](https://github.com/storytold/gridcraft) — spreadsheet | 0.18.0 |
-| `cadcraft-cli` | [CadCraft](https://github.com/storytold/cadcraft) — CAD & drafting | 0.19.0 |
-| `soundcraft-cli` | [SoundCraft](https://github.com/storytold/soundcraft) — audio workstation | 0.19.0 |
-| `wordcraft-cli` | [WordCraft](https://github.com/storytold/wordcraft) — word processor | 0.17.0 |
-| `anicraft-cli` | [AniCraft](https://github.com/storytold/anicraft) — 2D vector animation | 0.1.0 |
-| `texturecraft-cli` | [TextureCraft](https://github.com/storytold/texturecraft) — PBR texture painting | 0.5.0 |
-| `materialcraft-cli` | [MaterialCraft](https://github.com/storytold/materialcraft) — PBR material design | 0.3.0 |
-| `craft-anything-cli` | [Craft Anything](https://github.com/storytold/craft-anything) — understand & rebuild software | 0.6.0 |
+| `figcraft-cli` | [FigCraft](https://github.com/storytold/figcraft) — interface design & prototyping | 0.18.1 |
+| `deckcraft-cli` | [DeckCraft](https://github.com/storytold/deckcraft) — presentations & slideshows | 0.18.1 |
+| `photocraft-cli` | [PhotoCraft](https://github.com/storytold/photocraft) — photo editor | 0.23.1 |
+| `pdfcraft-cli` | [PdfCraft](https://github.com/storytold/pdfcraft) — PDF reader & editor | 0.21.1 |
+| `filmcraft-cli` | [FilmCraft](https://github.com/storytold/filmcraft) — nonlinear video editor | 0.20.1 |
+| `vectorcraft-cli` | [VectorCraft](https://github.com/storytold/vectorcraft) — vector art tool | 0.24.1 |
+| `lightcraft-cli` | [LightCraft](https://github.com/storytold/lightcraft) — non-destructive photo editor | 0.21.1 |
+| `designcraft-cli` | [DesignCraft](https://github.com/storytold/designcraft) — page & layout design | 0.20.1 |
+| `effectcraft-cli` | [EffectCraft](https://github.com/storytold/effectcraft) — motion graphics & compositing | 0.24.1 |
+| `gridcraft-cli` | [GridCraft](https://github.com/storytold/gridcraft) — spreadsheet | 0.19.1 |
+| `cadcraft-cli` | [CadCraft](https://github.com/storytold/cadcraft) — CAD & drafting | 0.20.1 |
+| `soundcraft-cli` | [SoundCraft](https://github.com/storytold/soundcraft) — audio workstation | 0.20.1 |
+| `wordcraft-cli` | [WordCraft](https://github.com/storytold/wordcraft) — word processor | 0.18.1 |
+| `anicraft-cli` | [AniCraft](https://github.com/storytold/anicraft) — 2D vector animation | 0.2.1 |
+| `texturecraft-cli` | [TextureCraft](https://github.com/storytold/texturecraft) — PBR texture painting | 0.6.1 |
+| `materialcraft-cli` | [MaterialCraft](https://github.com/storytold/materialcraft) — PBR material design | 0.4.1 |
+| `craft-anything-cli` | [Craft Anything](https://github.com/storytold/craft-anything) — understand & rebuild software | 0.6.1 |
 <!-- generated:available-clis:end -->
 
 Verify: `figcraft-cli --version` prints the installed version, matching the

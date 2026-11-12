@@ -9,8 +9,8 @@ class MaterialcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/materialcraft/releases/download/v0.3.0/materialcraft-cli-0.3.0-macos-universal.zip"
-  sha256 "9854d9efda5188ad5295c624f0350d34ee6c9b6d412ba96bc1c2d3bd5b21e632"
+  url "https://github.com/storytold/materialcraft/releases/download/v0.4.1/materialcraft-cli-0.4.1-macos-universal.zip"
+  sha256 "bcf0e87191dfca39ba14c8110823b21ed5bc5078ad7ae8e4cff380d83fec6edc"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."

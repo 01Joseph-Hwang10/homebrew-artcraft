@@ -9,8 +9,8 @@ class CraftAnythingCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/craft-anything/releases/download/v0.6.0/craft-anything-cli-0.6.0-macos-universal.zip"
-  sha256 "29661218b0c293308b4ffbe1623628f2d22ad4074dabeb414dbc8c7f25dcb2a5"
+  url "https://github.com/storytold/craft-anything/releases/download/v0.6.1/craft-anything-cli-0.6.1-macos-universal.zip"
+  sha256 "ddbae05f52a5526e149f656b0b44cf73a60ad9ec0a33d718f330bf231b988c2f"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."

@@ -9,8 +9,8 @@ class GridcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/gridcraft/releases/download/v0.18.0/gridcraft-cli-0.18.0-macos-universal.zip"
-  sha256 "4d9b6ef518a5740007a88bcad1551c09bd90f0c6829b1a4622364d85b92f5556"
+  url "https://github.com/storytold/gridcraft/releases/download/v0.19.1/gridcraft-cli-0.19.1-macos-universal.zip"
+  sha256 "7c2895ebad0bbd92b65c622ba7e22ada56e0498065dfdbd433111ba1e225eb8a"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."
