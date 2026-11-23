@@ -45,7 +45,7 @@ mismatched build.
 | `figcraft-cli` | [FigCraft](https://github.com/storytold/figcraft) — interface design & prototyping | 0.18.1 |
 | `deckcraft-cli` | [DeckCraft](https://github.com/storytold/deckcraft) — presentations & slideshows | 0.18.1 |
 | `photocraft-cli` | [PhotoCraft](https://github.com/storytold/photocraft) — photo editor | 0.23.1 |
-| `pdfcraft-cli` | [PdfCraft](https://github.com/storytold/pdfcraft) — PDF reader & editor | 0.21.1 |
+| `pdfcraft-cli` | [PdfCraft](https://github.com/storytold/pdfcraft) — PDF reader & editor | 0.22.0 |
 | `filmcraft-cli` | [FilmCraft](https://github.com/storytold/filmcraft) — nonlinear video editor | 0.20.1 |
 | `vectorcraft-cli` | [VectorCraft](https://github.com/storytold/vectorcraft) — vector art tool | 0.24.1 |
 | `lightcraft-cli` | [LightCraft](https://github.com/storytold/lightcraft) — non-destructive photo editor | 0.21.1 |

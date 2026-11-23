@@ -9,8 +9,8 @@ class PdfcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/pdfcraft/releases/download/v0.21.1/pdfcraft-cli-0.21.1-macos-universal.zip"
-  sha256 "337a9f644744b57e10de41c57366e53c5ccf8840a4d5dc7322b17b9b83fdc2fa"
+  url "https://github.com/storytold/pdfcraft/releases/download/v0.22.0/pdfcraft-cli-0.22.0-macos-universal.zip"
+  sha256 "d9b8a88070895e6d5ccf3cc53d1de353622b60bd8af993e1c3959b4be1caf0da"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."
