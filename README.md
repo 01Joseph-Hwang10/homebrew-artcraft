@@ -49,8 +49,8 @@ mismatched build.
 | `filmcraft-cli` | [FilmCraft](https://github.com/storytold/filmcraft) — nonlinear video editor | 0.20.1 |
 | `vectorcraft-cli` | [VectorCraft](https://github.com/storytold/vectorcraft) — vector art tool | 0.24.1 |
 | `lightcraft-cli` | [LightCraft](https://github.com/storytold/lightcraft) — non-destructive photo editor | 0.21.1 |
-| `designcraft-cli` | [DesignCraft](https://github.com/storytold/designcraft) — page & layout design | 0.20.1 |
-| `effectcraft-cli` | [EffectCraft](https://github.com/storytold/effectcraft) — motion graphics & compositing | 0.24.1 |
+| `designcraft-cli` | [DesignCraft](https://github.com/storytold/designcraft) — page & layout design | 0.21.1 |
+| `effectcraft-cli` | [EffectCraft](https://github.com/storytold/effectcraft) — motion graphics & compositing | 0.25.1 |
 | `gridcraft-cli` | [GridCraft](https://github.com/storytold/gridcraft) — spreadsheet | 0.19.1 |
 | `cadcraft-cli` | [CadCraft](https://github.com/storytold/cadcraft) — CAD & drafting | 0.20.1 |
 | `soundcraft-cli` | [SoundCraft](https://github.com/storytold/soundcraft) — audio workstation | 0.20.1 |
