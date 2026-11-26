@@ -9,8 +9,8 @@ class WordcraftCli < Formula
 
   # url must stay in lockstep with the upstream release — the asset name embeds
   # the version (the tag is verified against it by script/update.py).
-  url "https://github.com/storytold/wordcraft/releases/download/v0.18.1/wordcraft-cli-0.18.1-macos-universal.zip"
-  sha256 "34397cf6fcf73ee8ae8d53cab08fbdfc213262dbb6753c2965ebb7cde37b8616"
+  url "https://github.com/storytold/wordcraft/releases/download/v0.19.1/wordcraft-cli-0.19.1-macos-universal.zip"
+  sha256 "f008db7e1dd3f81a4f9ba65d34358ed4da8e30ebf9191258bef3f7be2cc32c53"
 
   # Per the NOTICE shipped inside the release asset:
   # "Licensed under the MIT License or the Apache License, Version 2.0, at your option."

@@ -43,7 +43,7 @@ mismatched build.
 | Formula | App | Latest |
 |---|---|---|
 | `figcraft-cli` | [FigCraft](https://github.com/storytold/figcraft) — interface design & prototyping | 0.18.1 |
-| `deckcraft-cli` | [DeckCraft](https://github.com/storytold/deckcraft) — presentations & slideshows | 0.18.1 |
+| `deckcraft-cli` | [DeckCraft](https://github.com/storytold/deckcraft) — presentations & slideshows | 0.19.1 |
 | `photocraft-cli` | [PhotoCraft](https://github.com/storytold/photocraft) — photo editor | 0.23.1 |
 | `pdfcraft-cli` | [PdfCraft](https://github.com/storytold/pdfcraft) — PDF reader & editor | 0.22.0 |
 | `filmcraft-cli` | [FilmCraft](https://github.com/storytold/filmcraft) — nonlinear video editor | 0.20.1 |
@@ -54,7 +54,7 @@ mismatched build.
 | `gridcraft-cli` | [GridCraft](https://github.com/storytold/gridcraft) — spreadsheet | 0.19.1 |
 | `cadcraft-cli` | [CadCraft](https://github.com/storytold/cadcraft) — CAD & drafting | 0.20.1 |
 | `soundcraft-cli` | [SoundCraft](https://github.com/storytold/soundcraft) — audio workstation | 0.20.1 |
-| `wordcraft-cli` | [WordCraft](https://github.com/storytold/wordcraft) — word processor | 0.18.1 |
+| `wordcraft-cli` | [WordCraft](https://github.com/storytold/wordcraft) — word processor | 0.19.1 |
 | `anicraft-cli` | [AniCraft](https://github.com/storytold/anicraft) — 2D vector animation | 0.2.1 |
 | `texturecraft-cli` | [TextureCraft](https://github.com/storytold/texturecraft) — PBR texture painting | 0.6.1 |
 | `materialcraft-cli` | [MaterialCraft](https://github.com/storytold/materialcraft) — PBR material design | 0.4.1 |
